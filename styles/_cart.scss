@@ -1,0 +1,124 @@
+.cart {
+  display: none;
+  position: absolute;
+  width: 24%;
+  min-width: 21em;
+  z-index: 5;
+  height: 15em;
+  right: $grandMargin;
+  background-color: white;
+  box-shadow: 0em $regularMargin $quadraRegularMargin -1 * $doubleRegularMargin rgba(0, 0, 0, 0.7);
+  transform: translateY(-$regularMargin);
+  border-radius: $halfRegularMargin;
+  flex-direction: column;
+
+  // .cart__header
+
+  &__header {
+    padding: $regularWithHalfMargin;
+    font-weight: 700;
+    box-shadow: 0em 0.08em rgba(0, 0, 255, 0.1);
+    height: 25%;
+  }
+
+  // .cart__cart-content
+
+  &__cart-content {
+    width: 100%;
+    height: 75%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    padding: $regularMargin;
+  }
+}
+.cart-content {
+  // .cart-content__empty
+
+  &__empty {
+    font-weight: 700;
+    color: $darkGrayishBlueColor;
+  }
+
+  // .cart-content__short-product
+
+  &__short-product {
+    width: 100%;
+    height: 35%;
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+
+    font-weight: 400;
+    color: $darkGrayishBlueColor;
+
+    margin: $halfRegularMargin 0;
+
+    img {
+      border-radius: 10%;
+      height: 100%;
+    }
+  }
+
+  // .cart-content__checkout
+
+  &__checkout {
+    width: 100%;
+    height: 35%;
+    display: none;
+  }
+}
+
+.short-product {
+  // .short-product__description
+
+  &__description {
+    display: grid;
+    padding: $quarterLessRegularMargin;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr min-content;
+    grid-template-areas:
+      "name name"
+      "price overPrice";
+    line-height: $regularWithHalfMargin;
+  }
+
+  // .short-product__delete
+
+  &__delete {
+  }
+}
+.description {
+  // .description__name
+
+  &__name {
+    grid-area: name;
+  }
+
+  // .description__price-amount
+
+  &__price-amount {
+    grid-area: price;
+  }
+
+  // .description__overall-price
+
+  &__overall-price {
+    grid-area: overPrice;
+    font-weight: 700;
+    color: black;
+  }
+}
+
+@media screen and (max-width: $mobileSize) {
+  .cart {
+    width: 95%;
+    height: 16em;
+    right: 2.5%;
+    min-width: 0;
+    top: 6em;
+    border-radius: 2.5%;
+    font-size: $tripleRegularMargin;
+  }
+}

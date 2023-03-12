@@ -1,0 +1,34 @@
+@font-face {
+  font-family: "KumbhSans";
+  src: url(../fonts/KumbhSans-Bold.eot);
+  src: url(../fonts/KumbhSans-Bold.eot?#iefix) format("embedded-opentype"),
+    url(../fonts/KumbhSans-Bold.otf) format("otf"),
+    url(../fonts/KumbhSans-Bold.svg#KumbhSans-Bold) format("svg"),
+    url(../fonts/KumbhSans-Bold.woff) format("woff"),
+    url(../fonts/KumbhSans-Bold.woff2) format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "KumbhSans";
+  src: url(../fonts/KumbhSans-Medium.eot);
+  src: url(../fonts/KumbhSans-Medium.eot?#iefix) format("embedded-opentype"),
+    url(../fonts/KumbhSans-Medium.otf) format("otf"),
+    url(../fonts/KumbhSans-Medium.svg#KumbhSans-Medium) format("svg"),
+    url(../fonts/KumbhSans-Medium.woff) format("woff"),
+    url(../fonts/KumbhSans-Medium.woff2) format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "KumbhSans";
+  src: url(../fonts/KumbhSans-Regular.eot);
+  src: url(../fonts/KumbhSans-Regular.eot?#iefix) format("embedded-opentype"),
+    url(../fonts/KumbhSans-Regular.otf) format("otf"),
+    url(../fonts/KumbhSans-Regular.svg#KumbhSans-Medium) format("svg"),
+    url(../fonts/KumbhSans-Regular.woff) format("woff"),
+    url(../fonts/KumbhSans-Regular.woff2) format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}

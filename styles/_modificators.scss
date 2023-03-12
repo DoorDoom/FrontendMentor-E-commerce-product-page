@@ -1,0 +1,37 @@
+._container {
+  max-width: 1200px;
+  margin: 0em auto;
+}
+
+._orange-button {
+  background-color: $primaryOrangeColor;
+  border-radius: $regularMargin - 0.2em;
+  width: 100%;
+  margin: 0em $regularMargin + 0.25em;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: white;
+  &:active {
+    opacity: 0.6;
+  }
+}
+
+._all-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+._arrow {
+  position: absolute;
+  width: 3.5em;
+  height: 3.5em;
+  top: 50%;
+  border-radius: 50%;
+  background-color: white;
+}
+
+._clickable {
+  cursor: pointer;
+}

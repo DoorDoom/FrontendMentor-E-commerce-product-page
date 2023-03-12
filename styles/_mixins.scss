@@ -1,0 +1,16 @@
+@mixin makeChoose($color, $borderRadius) {
+  border: 0.1875em solid $color;
+  border-radius: $borderRadius;
+  display: block;
+}
+
+@mixin makeArrow($diametr) {
+  position: absolute;
+  width: $diametr;
+  height: $diametr;
+  top: 50%;
+  transform: translateY(-$diametr);
+  border-radius: 50%;
+  background-color: white;
+  margin: $doubleRegularMargin;
+}

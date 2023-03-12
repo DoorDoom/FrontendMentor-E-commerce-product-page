@@ -1,0 +1,153 @@
+@import "./variables";
+@import "./mixins";
+
+.header {
+  // .header__container
+  width: 100%;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    box-shadow: 0em 0.08em rgba(0, 0, 255, 0.1);
+    padding: 0em $regularWithHalfMargin;
+  }
+
+  // .header__menu-icon
+
+  &__menu-icon {
+    display: none;
+    margin-right: $tripleRegularMargin;
+  }
+
+  // .header__logo
+
+  &__logo {
+    min-height: 100%;
+    margin-right: $doubleRegularMargin;
+  }
+
+  // .header__menu
+
+  &__menu {
+    width: 100%;
+  }
+
+  &__cart {
+    margin-right: $tripleRegularMargin;
+    img {
+      width: $regularWithHalfMargin;
+    }
+  }
+
+  &__cart-quantity {
+    display: none;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    width: $regularMargin;
+    height: $quarterLessRegularMargin;
+    border-radius: 37%;
+    background-color: $primaryOrangeColor;
+    transform: translateY(-0.15em) translateX(0.75em);
+    line-height: 50%;
+    color: white;
+    text-align: center;
+
+    span {
+      font-size: $halfRegularMargin;
+    }
+  }
+
+  // .header__profile
+
+  &__profile {
+    img {
+      width: 3.25em;
+      @include makeChoose(white, 50%);
+      &:active {
+        @include makeChoose($primaryOrangeColor, 50%);
+      }
+    }
+  }
+}
+.menu {
+  // .menu__list
+
+  &__list {
+    display: flex;
+  }
+
+  // .menu__item
+
+  &__item {
+    margin: $tripleRegularMargin $regularMargin;
+    position: relative;
+    a {
+      color: $darkGrayishBlueColor;
+    }
+
+    &:active {
+      a {
+        color: black;
+      }
+    }
+    &:active::after {
+      position: absolute;
+      display: block;
+      content: "";
+      height: $eighthRegularMargin;
+      width: 100%;
+      bottom: -$tripleRegularMargin;
+      background-color: $primaryOrangeColor;
+    }
+  }
+}
+
+@media screen and (max-width: $mobileSize) {
+  nav {
+    display: none;
+  }
+
+  .header {
+    &__container {
+      box-shadow: none;
+      padding: $quadraRegularMargin;
+    }
+
+    // .header__menu-icon
+
+    &__menu-icon {
+      display: block;
+      img {
+        width: $tripleRegularMargin;
+      }
+    }
+
+    &__logo {
+      max-height: 100%;
+      width: 100%;
+    }
+
+    &__cart {
+      margin-right: $tripleRegularMargin;
+      img {
+        width: $quadraRegularMargin;
+      }
+    }
+
+    &__cart-quantity {
+      width: $doubleRegularMargin + 0.35em;
+      height: $doubleRegularMargin - 0.15em;
+      transform: translateY(-0.5em) translateX($doubleRegularMargin);
+      span {
+        font-size: $regularMargin;
+      }
+    }
+
+    &__profile {
+      img {
+        width: $quadraRegularMargin;
+      }
+    }
+  }
+}

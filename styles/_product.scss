@@ -1,0 +1,266 @@
+@import "./mixins";
+@import "./variables";
+
+.main {
+  // .main__product
+
+  &__product {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+.product {
+  // .product__description
+
+  &__description {
+  }
+
+  // .product__company
+
+  &__company {
+    color: $primaryOrangeColor;
+    font-weight: 700;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding-bottom: $regularMargin;
+  }
+
+  // .product__line
+
+  &__line {
+    font-weight: 700;
+    font-size: 3em;
+    padding-bottom: calc($regularMargin - 0.25em);
+  }
+
+  // .product__text
+
+  &__text {
+    color: $darkGrayishBlueColor;
+    width: 400;
+    line-height: $doubleRegularMargin;
+    padding-bottom: $doubleRegularMargin;
+  }
+
+  // .product__price
+
+  &__price {
+    display: grid;
+    gap: 1.5em;
+    grid-template-columns: 5em 2em;
+    grid-template-rows: 1em 1em;
+    align-items: center;
+    padding-bottom: $doubleRegularMargin;
+  }
+
+  // .product__to-cart
+
+  &__to-cart {
+    display: flex;
+  }
+}
+.price {
+  // .price__actual
+
+  &__actual {
+    font-weight: 700;
+    font-size: $regularMargin + 0.5em;
+  }
+
+  // .price__discount
+
+  &__discount {
+    font-weight: 700;
+    color: $primaryOrangeColor;
+    font-size: $regularMargin;
+  }
+
+  // .price__old
+
+  &__old {
+    font-weight: 500;
+    color: $grayishBlueColor;
+    font-size: calc($regularMargin - 0.15em);
+    text-decoration: line-through;
+  }
+}
+.to-cart {
+  // .to-cart__minus
+
+  &__minus {
+    display: flex;
+    padding: $regularMargin + 0.25em;
+    align-items: center;
+    &:active {
+      opacity: 0.6;
+    }
+  }
+
+  // .to-cart__quantity
+
+  &__quantity {
+    display: flex;
+    font-weight: 700;
+    text-align: center;
+    background-color: $paleOrangeColor;
+  }
+
+  // .to-cart__quantity-value
+
+  &__quantity-value {
+    font-weight: 700;
+    text-align: center;
+    margin: $regularMargin + 0.25em;
+    width: $doubleRegularMargin;
+  }
+
+  // .to-cart__plus
+
+  &__plus {
+    display: flex;
+    padding: $regularMargin + 0.25em;
+    align-items: center;
+    &:active {
+      opacity: 0.6;
+    }
+  }
+
+  // .to-cart__add
+
+  &__add {
+    display: flex;
+    img {
+      color: white;
+      filter: brightness(0) invert(1);
+      width: $regularMargin + 0.2em;
+    }
+    div {
+      margin-left: $regularMargin;
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .to-cart {
+    // .to-cart__minus
+
+    &__minus {
+      padding: $regularWithHalfMargin 0;
+    }
+
+    // .to-cart__quantity-value
+
+    &__quantity-value {
+      margin: $regularWithHalfMargin;
+    }
+
+    // .to-cart__plus
+
+    &__plus {
+      padding: $regularWithHalfMargin 0;
+    }
+  }
+}
+@media screen and (max-width: $mobileSize) {
+  .main {
+    // .main__product
+
+    &__product {
+      width: 100%;
+      padding: $quadraRegularMargin;
+
+      > div,
+      article {
+        font-size: $doubleRegularMargin;
+      }
+    }
+  }
+
+  .product {
+    // .product__price
+
+    &__price {
+      display: flex;
+      align-items: center;
+      padding-bottom: $doubleRegularMargin;
+    }
+
+    &__to-cart {
+      flex-direction: column;
+    }
+  }
+
+  .price {
+    // .price__actual
+
+    &__actual {
+      font-size: $doubleRegularMargin;
+    }
+
+    // .price__discount
+
+    &__discount {
+      font-size: 1.25em;
+      width: 100%;
+    }
+
+    // .price__old
+
+    &__old {
+      font-size: 1.25em;
+    }
+  }
+
+  .to-cart {
+    // .to-cart__minus
+    justify-content: space-between;
+
+    &__minus {
+      display: flex;
+      padding: $regularMargin + 0.25em;
+      align-items: center;
+      &:active {
+        opacity: 0.6;
+      }
+    }
+
+    // .to-cart__quantity
+
+    &__quantity {
+      display: flex;
+      text-align: center;
+      justify-content: space-between;
+      margin-bottom: $regularWithHalfMargin;
+    }
+
+    // .to-cart__plus
+
+    &__plus {
+      display: flex;
+      padding: $regularMargin + 0.25em;
+      align-items: center;
+      &:active {
+        opacity: 0.6;
+      }
+    }
+
+    // .to-cart__add
+
+    &__add._orange-button {
+      display: flex;
+      padding: $regularMargin + 0.25em;
+      margin: 0;
+      img {
+        color: white;
+        filter: brightness(0) invert(1);
+        width: $regularMargin + 0.2em;
+      }
+      div {
+        margin-left: $regularMargin;
+      }
+    }
+  }
+}
