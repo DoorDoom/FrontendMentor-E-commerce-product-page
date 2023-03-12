@@ -52,6 +52,10 @@ const checkoutBtn: HTMLCollectionOf<HTMLImageElement> =
   document.getElementsByClassName(
     "cart-content__checkout"
   ) as HTMLCollectionOf<HTMLImageElement>;
+const mMenu: HTMLCollectionOf<HTMLImageElement> =
+  document.getElementsByClassName(
+    "mobile-menu"
+  ) as HTMLCollectionOf<HTMLImageElement>;
 const nameProduct: HTMLElement = document.getElementById(
   "nameProduct"
 ) as HTMLElement;
@@ -144,8 +148,16 @@ function closeFPhotos() {
   fphotos[0].style.display = "none";
 }
 function openFPhotos() {
-  if (document.documentElement.clientWidth > 480)
+  if (document.documentElement.clientWidth < 560)
     fphotos[0].style.display = "flex";
+}
+
+function closeMMenu() {
+  mMenu[0].style.display = "none";
+}
+function openMMenu() {
+  if (document.documentElement.clientWidth < 560)
+    mMenu[0].style.display = "flex";
 }
 
 function toNext(num?: number) {

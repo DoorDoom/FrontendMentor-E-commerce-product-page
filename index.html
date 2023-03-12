@@ -18,7 +18,7 @@
     <div class="wrapper">
       <header class="header">
         <div class="header__container _container">
-          <a href="#" class="header__menu-icon"
+          <a href="#" class="header__menu-icon" onclick="openMMenu()"
             ><img src="./images/icon-menu.svg" alt="Логотип меню"
           /></a>
           <a href="#" class="header__logo"
@@ -235,6 +235,32 @@
             </li>
           </ul>
         </div>
+      </div>
+    </div>
+    <div class="mobile-menu">
+      <div class="mobile-menu__container">
+        <div class="mobile-menu__close _clickable" onclick="closeMMenu()">
+          <img src="./images/icon-close.svg" alt="Иконка закрыть" />
+        </div>
+        <nav class="mobile-menu__menu">
+          <ul class="mobile-menu__list">
+            <li class="mobile-menu__item">
+              <a href="#" class="mobile-menu__link">Collections</a>
+            </li>
+            <li class="mobile-menu__item">
+              <a href="#" class="mobile-menu__link">Men</a>
+            </li>
+            <li class="mobile-menu__item">
+              <a href="#" class="mobile-menu__link">Women</a>
+            </li>
+            <li class="mobile-menu__item">
+              <a href="#" class="mobile-menu__link">About</a>
+            </li>
+            <li class="mobile-menu__item">
+              <a href="#" class="mobile-menu__link">Contact</a>
+            </li>
+          </ul>
+        </nav>
       </div>
     </div>
     <script src="./scripts/script.js"></script>
