@@ -108,7 +108,7 @@ function closeMMenu() {
     mMenu[0].style.display = "none";
 }
 function openMMenu() {
-    if (document.documentElement.clientWidth > 560)
+    if (document.documentElement.clientWidth < 560)
         mMenu[0].style.display = "flex";
 }
 function toNext(num) {
