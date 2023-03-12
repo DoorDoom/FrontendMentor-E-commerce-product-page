@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./styles/reset-css.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <title>Frontend Mentor | E-commerce product page</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <div class="header__container _container">
+          <a href="#" class="header__menu-icon"
+            ><img src="./images/icon-menu.svg" alt="Логотип меню"
+          /></a>
+          <a href="#" class="header__logo"
+            ><img src="./images/logo.svg" alt="Логотип кампании"
+          /></a>
+          <nav class="header__menu">
+            <ul class="menu__list">
+              <li class="menu__item">
+                <a href="#" class="menu__link">Collections</a>
+              </li>
+              <li class="menu__item">
+                <a href="#" class="menu__link">Men</a>
+              </li>
+              <li class="menu__item">
+                <a href="#" class="menu__link">Women</a>
+              </li>
+              <li class="menu__item">
+                <a href="#" class="menu__link">About</a>
+              </li>
+              <li class="menu__item">
+                <a href="#" class="menu__link">Contact</a>
+              </li>
+            </ul>
+          </nav>
+          <a href="#" class="header__cart" onclick="makeCartVisible()">
+            <div class="header__cart-quantity">
+              <span id="quantityIcon"> 0 </span>
+            </div>
+            <img src="./images/icon-cart.svg" alt="Иконка тележки"
+          /></a>
+          <a href="#" class="header__profile"
+            ><img src="./images/image-avatar.png" alt="Аватар пользователя"
+          /></a>
+        </div>
+        <div class="cart" id="cart">
+          <div class="cart__header">Cart</div>
+          <div class="cart__cart-content">
+            <div class="cart-content__empty">Your cart is empty.</div>
+            <div class="cart-content__short-product">
+              <img
+                src="./images/image-product-1-thumbnail.jpg"
+                alt="Малая фотография продукта"
+              />
+              <div class="short-product__description">
+                <p id="nameProduct" class="description__name">
+                  Fall Limited Edition Sneakers
+                </p>
+                <p id="priceProduct" class="description__price-amount">
+                  $125.00 х 2
+                </p>
+                <p id="overallPriceProduct" class="description__overall-price">
+                  $250.00
+                </p>
+              </div>
+              <a
+                href="#"
+                class="short-product__delete"
+                onclick="deleteProduct()"
+                ><img src="./images/icon-delete.svg" alt="Иконка удалить"
+              /></a>
+            </div>
+            <button class="cart-content__checkout _orange-button">
+              Checkout
+            </button>
+          </div>
+        </div>
+      </header>
+      <main class="main _container">
+        <section class="main__photos">
+          <div class="photos__photo _clickable" onclick="openFPhotos()">
+            <img
+              id="main-photo"
+              src="./images/image-product-1.jpg"
+              alt="Фото продукта"
+            />
+            <button class="photo__left-arrow _all-center" onclick="toPrev()">
+              <img src="./images/icon-previous.svg" alt="Иконка предыдущий" />
+            </button>
+            <button class="photo__right-arrow _all-center" onclick="toNext()">
+              <img src="./images/icon-next.svg" alt="Иконка следующий" />
+            </button>
+          </div>
+          <div class="photos__catalog">
+            <ul class="photos__list">
+              <li
+                class="photos__item _active _clickable"
+                onclick="makePhotoFocused(0)"
+              >
+                <img
+                  src="./images/image-product-1-thumbnail.jpg"
+                  alt="Фото продукта"
+                />
+              </li>
+              <li class="photos__item _clickable" onclick="makePhotoFocused(1)">
+                <img
+                  src="./images/image-product-2-thumbnail.jpg"
+                  alt="Фото продукта"
+                />
+              </li>
+              <li class="photos__item _clickable" onclick="makePhotoFocused(2)">
+                <img
+                  src="./images/image-product-3-thumbnail.jpg"
+                  alt="Фото продукта"
+                />
+              </li>
+              <li class="photos__item _clickable" onclick="makePhotoFocused(3)">
+                <img
+                  src="./images/image-product-4-thumbnail.jpg"
+                  alt="Фото продукта"
+                />
+              </li>
+            </ul>
+          </div>
+        </section>
+        <section class="main__product">
+          <article class="product__description">
+            <h4 class="product__company">Sneaker Company</h4>
+            <h1 class="product__line">Fall Limited Edition Sneakers</h1>
+            <p class="product__text">
+              These low-profile sneakers are your perfect casual wear companion.
+              Featuring a durable rubber outer sole, they’ll withstand
+              everything the weather can offer.
+            </p>
+          </article>
+          <div class="product__price">
+            <div class="price__actual">$125.00</div>
+            <div class="price__discount">50%</div>
+            <div class="price__old">$250.00</div>
+          </div>
+          <div class="product__to-cart">
+            <div class="to-cart__quantity">
+              <button class="to-cart__minus" onclick="decrement()">
+                <img src="./images/icon-minus.svg" alt="Иконка минуса" />
+              </button>
+              <div id="quantity" class="to-cart__quantity-value _all-center">
+                0
+              </div>
+              <button class="to-cart__plus" onclick="increment()">
+                <img src="./images/icon-plus.svg" alt="Иконка плюса" />
+              </button>
+            </div>
+            <button
+              class="to-cart__add _orange-button"
+              onclick="createProduct()"
+            >
+              <img src="./images/icon-cart.svg" alt="Иконка тележки" />
+              <div>Add to cart</div>
+            </button>
+          </div>
+        </section>
+      </main>
+    </div>
+    <div class="focusPhotos">
+      <div class="focusPhotos__container">
+        <div class="container__close _clickable" onclick="closeFPhotos()">
+          <img src="./images/icon-close.svg" alt="Иконка закрыть" />
+        </div>
+        <div class="focusPhotos__photo">
+          <img
+            id="main-fphoto"
+            src="./images/image-product-1.jpg"
+            alt="Фото продукта"
+          />
+          <button
+            class="focusPhotos__left-arrow _all-center _arrow"
+            onclick="toPrev(1)"
+          >
+            <img src="./images/icon-previous.svg" alt="Иконка предыдущий" />
+          </button>
+          <button
+            class="focusPhotos__right-arrow _all-center _arrow"
+            onclick="toNext(1)"
+          >
+            <img src="./images/icon-next.svg" alt="Иконка следующий" />
+          </button>
+        </div>
+        <div class="focusPhotos__catalog">
+          <ul class="focusPhotos__list">
+            <li
+              class="focusPhotos__item _active _clickable"
+              onclick="makePhotoFocused(0,1)"
+            >
+              <img
+                src="./images/image-product-1-thumbnail.jpg"
+                alt="Фото продукта"
+              />
+            </li>
+            <li
+              class="focusPhotos__item _clickable"
+              onclick="makePhotoFocused(1,1)"
+            >
+              <img
+                src="./images/image-product-2-thumbnail.jpg"
+                alt="Фото продукта"
+              />
+            </li>
+            <li
+              class="focusPhotos__item _clickable"
+              onclick="makePhotoFocused(2,1)"
+            >
+              <img
+                src="./images/image-product-3-thumbnail.jpg"
+                alt="Фото продукта"
+              />
+            </li>
+            <li
+              class="focusPhotos__item _clickable"
+              onclick="makePhotoFocused(3,1)"
+            >
+              <img
+                src="./images/image-product-4-thumbnail.jpg"
+                alt="Фото продукта"
+              />
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script src="./scripts/script.js"></script>
+  </body>
+</html>
