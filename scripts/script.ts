@@ -108,7 +108,7 @@ function decrement() {
 }
 
 function makeCartVisible() {
-  if (cart.style.display === "none") {
+  if (cart.style.display === "none" || cart.style.display === "") {
     cart.style.display = "flex";
     if (product.quantity === "0") {
       makeEmpty();
